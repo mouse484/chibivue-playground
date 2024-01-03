@@ -1,5 +1,5 @@
 import type { RendererOptions } from '../runtime-core';
-import { patchEvent } from './modules';
+import { patchAttr, patchEvent } from './modules';
 
 type DOMRendererOptions = RendererOptions<Node, Element>;
 
@@ -10,6 +10,6 @@ export const patchProp: DOMRendererOptions['patchProp'] = (el, key, value) => {
   if (isOn(key)) {
     patchEvent(el, key, value);
   } else {
-    // patchAttr(el, key, value); // これから実装します
+    patchAttr(el, key, value);
   }
 };

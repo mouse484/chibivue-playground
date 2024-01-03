@@ -13,4 +13,4 @@ export const nodeOps = {
   insert: (child, parent, anchor) => {
     parent.insertBefore(child, anchor || null);
   },
-} satisfies Omit<RendererOptions<Node>, 'patchProp'>;
+} satisfies Omit<RendererOptions<Node>, 'patchProp' | 'patchAttr'>;
