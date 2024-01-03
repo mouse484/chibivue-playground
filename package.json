@@ -1,0 +1,14 @@
+{
+  "name": "chibivue-playground",
+  "module": ".",
+  "type": "module",
+  "scripts": {
+    "dev": "cd examples/playground && ni && nr dev"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
