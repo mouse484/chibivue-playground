@@ -3,9 +3,11 @@
   "module": ".",
   "type": "module",
   "scripts": {
-    "dev": "cd examples/playground && ni && nr dev"
+    "dev": "cd examples/playground && ni && nr dev",
+    "check": "bunx @biomejs/biome check --apply ."
   },
   "devDependencies": {
+    "@biomejs/biome": "1.4.1",
     "@types/bun": "latest",
     "@types/web": "^0.0.133"
   },
