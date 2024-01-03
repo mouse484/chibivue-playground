@@ -1,0 +1,3 @@
+tasks:
+  - init: npm i -g bun @antfu/ni && ni
+    command: nr dev
