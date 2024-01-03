@@ -5,8 +5,9 @@ import {
 } from '../runtime-core';
 
 import { nodeOps } from './nodOps';
+import { patchProp } from './patchProp';
 
-const { render } = createRenderer<Node>(nodeOps);
+const { render } = createRenderer<Node>({ ...nodeOps, patchProp });
 
 const _createApp = createAppAPI(render);
 

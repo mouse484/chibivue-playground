@@ -6,7 +6,10 @@ export type RendererNode = {
 };
 export type RendererElement = RendererNode;
 
-export type RendererOptions<HostNode = RendererNode> = {
+export type RendererOptions<
+  HostNode = RendererNode,
+  HostElement = RendererElement
+> = {
   createElement(tagName: string): HostNode;
 
   createText(text: string): HostNode;
@@ -14,6 +17,9 @@ export type RendererOptions<HostNode = RendererNode> = {
   setElementText(node: HostNode, text: string): void;
 
   insert(cjild: HostNode, parent: HostNode, anchor?: HostNode | null): void;
+
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  patchProp(el: HostElement, key: string, value: any): void;
 };
 
 export type RootRenderFunction<HostElement = RendererElement> = (
@@ -28,7 +34,7 @@ export type Renderer<T extends RendererElement = RendererElement> = {
 export const createRenderer = <T extends RendererElement>(
   options: RendererOptions<T>
 ): Renderer<T> => {
-  const { createText, createElement, insert } = options;
+  const { createText, createElement, insert, patchProp } = options;
 
   const renderVNode = (vnode: VNode | string) => {
     if (typeof vnode === 'string') {
@@ -36,6 +42,10 @@ export const createRenderer = <T extends RendererElement>(
     }
 
     const el = createElement(vnode.type);
+
+    for (const [key, value] of Object.entries(vnode.props)) {
+      patchProp(el, key, value);
+    }
 
     for (const child of vnode.children) {
       insert(renderVNode(child), el);
