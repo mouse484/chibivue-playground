@@ -1,3 +1,10 @@
-export const helloChibivue = () => {
-  console.log('Hello chibivue!');
+export const createApp = (options: { render: () => string }) => {
+  return {
+    mount: (selector: string) => {
+      const root = document.querySelector(selector);
+      if (root) {
+        root.innerHTML = options.render();
+      }
+    },
+  };
 };
