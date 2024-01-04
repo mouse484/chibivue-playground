@@ -11,5 +11,10 @@
 				"useNamingConvention": "off"
 			}
 		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single"
+		}
 	}
 }
