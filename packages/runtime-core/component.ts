@@ -1,4 +1,7 @@
+// biome-ignore lint/complexity/noBannedTypes: <explanation>
+type ComponentFunction = Function;
+
 export type Component = {
-  // biome-ignore lint/complexity/noBannedTypes: <explanation>
-  render?: Function;
+	render?: ComponentFunction;
+	setup?: () => ComponentFunction;
 };

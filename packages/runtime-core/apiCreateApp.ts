@@ -1,24 +1,31 @@
-import type { Component } from './component';
-import type { RootRenderFunction } from './renderer';
+import type { Component } from "./component";
+import type { RootRenderFunction } from "./renderer";
 
 export interface App<HostElement> {
-  mount(container: HostElement | string): void;
+	mount(container: HostElement | string): void;
 }
 
 export type CreateAppFunction<HostElement> = (
-  rootComponent: Component
+	rootComponent: Component,
 ) => App<HostElement>;
 
 export const createAppAPI =
-  <HostElement>(
-    render: RootRenderFunction<HostElement>
-  ): CreateAppFunction<HostElement> =>
-  (rootComponent) => {
-    const app = {
-      mount(container: HostElement) {
-        const message = rootComponent.render?.();
-        render(message, container);
-      },
-    } satisfies App<HostElement>;
-    return app;
-  };
+	<HostElement>(
+		render: RootRenderFunction<HostElement>,
+	): CreateAppFunction<HostElement> =>
+	(rootComponent) => {
+		const app = {
+			mount(container: HostElement) {
+				const componentRender = rootComponent.setup?.();
+				if (!componentRender) return;
+
+				const updateComponent = () => {
+					const vnode = componentRender();
+					render(vnode, container);
+				};
+
+				updateComponent();
+			},
+		} satisfies App<HostElement>;
+		return app;
+	};
