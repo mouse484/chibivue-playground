@@ -2,17 +2,22 @@
   "name": "chibivue-playground",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "cd examples/playground && ni && nr dev"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd examples/playground && ni && nr dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
   "dependencies": {
     "install": "^0.13.0"
   },
   "devDependencies": {
-    "@types/node": "^20.14.7"
+    "@antfu/eslint-config": "^2.21.1",
+    "@types/node": "^20.14.7",
+    "eslint": "9.4.0",
+    "eslint-plugin-format": "^0.1.1"
   }
 }
