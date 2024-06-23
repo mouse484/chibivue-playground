@@ -13,8 +13,8 @@ importers:
         version: 0.13.0
     devDependencies:
       '@mouse_484/eslint-config':
-        specifier: ^3.2.0
-        version: 3.2.0(@vue/compiler-sfc@3.4.29)(eslint-plugin-format@0.1.2(eslint@9.4.0))(eslint@9.4.0)(typescript@5.5.2)
+        specifier: ^3.2.1
+        version: 3.2.1(@vue/compiler-sfc@3.4.29)(eslint-plugin-format@0.1.2(eslint@9.4.0))(eslint@9.4.0)(typescript@5.5.2)
       '@types/node':
         specifier: ^20.14.7
         version: 20.14.7
@@ -166,8 +166,8 @@ packages:
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
 
-  '@mouse_484/eslint-config@3.2.0':
-    resolution: {integrity: sha512-OHLWIx3qv22JeZyGwA+nBjjVoDp558MPvmKB8FIKv7URYLKN3YYtXCr5HO4LzIxySFGDdLRJuVikxWw+XepINw==}
+  '@mouse_484/eslint-config@3.2.1':
+    resolution: {integrity: sha512-ZsAFJttUPk88T60GVaw3Ef7WjqRJ+779ld9CsXd5YGU6kErEcuWU2H9r69N5wLi6Fnme27xRea2dvsMuuzbCZA==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1547,7 +1547,7 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.0.8
 
-  '@mouse_484/eslint-config@3.2.0(@vue/compiler-sfc@3.4.29)(eslint-plugin-format@0.1.2(eslint@9.4.0))(eslint@9.4.0)(typescript@5.5.2)':
+  '@mouse_484/eslint-config@3.2.1(@vue/compiler-sfc@3.4.29)(eslint-plugin-format@0.1.2(eslint@9.4.0))(eslint@9.4.0)(typescript@5.5.2)':
     dependencies:
       '@antfu/eslint-config': 2.21.1(@vue/compiler-sfc@3.4.29)(eslint-plugin-format@0.1.2(eslint@9.4.0))(eslint@9.4.0)(typescript@5.5.2)
     transitivePeerDependencies:

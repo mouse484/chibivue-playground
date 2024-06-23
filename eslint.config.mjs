@@ -4,7 +4,4 @@ export default mouse({
   formatters: true,
   stylistic: true,
   typescript: true,
-  files: [
-    '*/**.*',
-  ],
 })
