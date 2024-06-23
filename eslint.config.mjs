@@ -1,6 +1,6 @@
-import antfu from '@antfu/eslint-config'
+import { mouse } from '@mouse_484/eslint-config'
 
-export default antfu({
+export default mouse({
   formatters: true,
   stylistic: true,
   typescript: true,

@@ -17,7 +17,9 @@ export type RootRenderFunction<HostElement = RendererElement> = (
   container: HostElement,
 ) => void
 
-export function createRenderer<HostNode = RendererElement>(options: RendererOptions<HostNode>) {
+export function createRenderer<HostNode = RendererElement>(
+  options: RendererOptions<HostNode>,
+) {
   const {
     createElement: hostCreateElement,
     createText: hostCreateText,

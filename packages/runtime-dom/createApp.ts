@@ -4,7 +4,9 @@ import type { RendererOptions } from '../runtime-core/renderer'
 import { createRenderer } from '../runtime-core/renderer'
 import { nodeOps } from './nodeOps'
 
-const { render } = createRenderer<string>(nodeOps as unknown as RendererOptions<string>)
+const { render } = createRenderer<string>(
+  nodeOps as unknown as RendererOptions<string>,
+)
 const _createApp = createAppAPI<string>(render)
 
 export const createApp = ((...args) => {
